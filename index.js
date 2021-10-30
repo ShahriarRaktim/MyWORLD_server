@@ -61,10 +61,10 @@ async function run() {
     });
 
     //Delete
-    app.delete("/plans/:id", async (req, res) => {
+    app.delete("/booked/:id", async (req, res) => {
       const id = req.params.id;
       const service = { _id: ObjectId(id) };
-      const result = await serviceCollection.deleteOne(service);
+      const result = await userCollection.deleteOne(service);
       res.send(result);
     });
   } finally {
@@ -73,9 +73,6 @@ async function run() {
 }
 run().catch(console.dir);
 
-app.get('/', (req, res)=>{
-    res.send("Running server ok")
-});
 app.get('/love', (req, res)=>{
     res.send("Running hello")
 });
