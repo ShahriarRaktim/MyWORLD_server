@@ -18,13 +18,6 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
-// const database = client.db("tour");
-// const serviceCollection = database.collection("plans");
-// app.get("/plans", (req, res) => {
-//     const ne = serviceCollection.find({});
-//     console.log(ne)
-//   res.send(ne);
-// });
 
 async function run() {
   try {
