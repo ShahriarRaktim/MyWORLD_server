@@ -73,7 +73,9 @@ async function run() {
 }
 run().catch(console.dir);
 
-
+app.get('/', (req, res)=>{
+    res.send("Running server ok")
+})
 
 app.listen(port, () => {
   console.log("Running Genius Server on port", port);
