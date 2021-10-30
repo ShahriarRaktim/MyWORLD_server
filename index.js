@@ -59,6 +59,12 @@ async function run() {
       const result = await userCollection.insertOne(service);
       res.json(result);
     });
+    //Post
+    app.post("/addplan", async (req, res) => {
+      const service = req.body;
+      const result = await serviceCollection.insertOne(service);
+      res.json(result);
+    });
 
     //Delete
     app.delete("/booked/:id", async (req, res) => {
