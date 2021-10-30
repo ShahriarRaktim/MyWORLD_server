@@ -63,6 +63,7 @@ async function run() {
     //Delete
     app.delete("/booked/:id", async (req, res) => {
       const id = req.params.id;
+      console.log(id)
       const service = { _id: ObjectId(id) };
       const result = await userCollection.deleteOne(service);
       res.send(result);
